@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takvim Uygulaması</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Takvim Uygulaması</h1>
+        <div class="month-nav">
+            <button id="prevMonthButton">&#9664;</button> 
+            <span id="monthYear"></span>
+            <button id="nextMonthButton">&#9654;</button> 
+        </div>
+        <div class="calendar" id="calendar"></div>
+    </div>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Etkinlik</h2>
+            <div class="menu">
+                <button id="addEventButton">Etkinlik Ekle</button>
+                <button id="viewEventsButton">Etkinliklerim</button>
+            </div>
+            <div id="addEventForm">
+                <input type="text" id="eventTitle" placeholder="Etkinlik Başlığı">
+                <input type="date" id="eventDate">
+                <input type="time" id="eventTime">
+                <button id="saveEventButton">Kaydet</button>
+            </div>
+            <div id="eventList" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

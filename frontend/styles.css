@@ -1,0 +1,270 @@
+body {
+    font-family: 'Courier New', Courier, monospace; 
+    background-color: #f4f1e9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff8e1; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-weight: bold;
+    background-color: #e3f2fd; 
+    color: #0d47a1;
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #0d47a1;
+    font-size: 1.1em; 
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 1em;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+h1 {
+    text-align: center;
+    color: #5d4037; 
+    font-family: 'Georgia', serif; 
+}
+
+.month-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#prevMonthButton, #nextMonthButton {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #5d4037; 
+}
+
+#monthYear {
+    margin: 0 20px;
+    font-size: 1.5em;
+    color: #5d4037; 
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eafbfe; 
+    border: 2px solid #5d4037; 
+    border-radius: 8px;
+    height: 45px;
+    font-size: 1em; 
+    color: #5d4037; 
+    font-weight: bold;
+}
+
+.day {
+    background-color: #fff; 
+    border: 1px solid #837c7a; 
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.2s; 
+    margin: 5px; 
+    border-radius: 8px; 
+    font-size: 1em; 
+}
+.day-number {
+    font-size: 1.5em; 
+    font-weight: bold;
+    border: 2px solid #d7ccc8; 
+    border-radius: 5px; 
+    padding: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block; 
+}
+
+.day:hover {
+    background-color: #e0e0e0; 
+    transform: scale(1.05);
+}
+
+.event {
+    background-color: #f39c12; 
+    color: white;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 5px;
+    cursor: pointer; 
+    flex-shrink: 0;
+    min-height: 30px;
+}
+.event-count {
+    background-color: #d6f3e2; 
+    color: rgb(47, 43, 43);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px; 
+    text-align: center; 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-radius: 10px;
+}
+.delete-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right; 
+}
+.delete-btn:hover {
+    background-color: #c0392b; 
+}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #5d4037;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button#addEventButton, button#viewEventsButton {
+    background-color: #5d4037;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#addEventButton:hover, button#viewEventsButton:hover {
+    background-color: #3e2723;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff; 
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #d7ccc8; 
+    width: 400px; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+}
+
+h2 {
+    text-align: center; 
+    color: #5d4037; 
+    font-family: 'Georgia', serif;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+.close:hover {
+    color: #5d4037; 
+}
+
+input[type="text"], input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 5px; 
+    margin: 10px 0;
+    border: 1px solid #d7ccc8; 
+    border-radius: 5px;
+    font-size: 1em; 
+}
+
+button#saveEventButton {
+    background-color: #5d4037; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em; 
+    transition: background-color 0.3s; 
+}
+
+button#saveEventButton:hover {
+    background-color: #3e2723; 
+}
+
+#eventList {
+    margin-top: 20px;
+}
+
+.event-item {
+    background-color: #a1887f; 
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-item button {
+    background-color: #5d4037;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-item button:hover {
+    background-color: #3e2723;
+}
